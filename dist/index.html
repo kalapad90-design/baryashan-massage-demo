@@ -18,7 +18,7 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-  <link rel="stylesheet" href="style.css?v=4.0">
+  <link rel="stylesheet" href="style.css?v=4.5">
 </head>
 <body>
 
@@ -77,29 +77,52 @@
             </a>
           </div>
 
+          <!-- Hero Meta Items with Vertical Accent Lines (matching screenshot) -->
           <div class="hero__meta">
             <div class="meta-item">
-              <span class="meta-item__val">5.0 ★</span>
-              <span class="meta-item__lbl">Рейтинг 2ГИС</span>
+              <span class="v-feature-bar"></span>
+              <div>
+                <span class="meta-item__val">5.0 ★</span>
+                <span class="meta-item__lbl">Рейтинг 2ГИС</span>
+              </div>
             </div>
-            <div class="meta-divider"></div>
+
             <div class="meta-item">
-              <span class="meta-item__val">Приватно</span>
-              <span class="meta-item__lbl">Один гость в кабинете</span>
+              <span class="v-feature-bar"></span>
+              <div>
+                <span class="meta-item__val">Приватно</span>
+                <span class="meta-item__lbl">Один гость в кабинете</span>
+              </div>
             </div>
-            <div class="meta-divider"></div>
+
             <div class="meta-item">
-              <span class="meta-item__val">Советская, 23а</span>
-              <span class="meta-item__lbl">Удобная парковка</span>
+              <span class="v-feature-bar"></span>
+              <div>
+                <span class="meta-item__val">Советская, 23а</span>
+                <span class="meta-item__lbl">Удобная парковка</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="hero__photo-wrap">
-          <img src="assets/massage-studio-hero.png" alt="Кабинет массажа Baryashan" class="hero__photo">
-          <div class="hero__photo-badge">
-            <span class="badge-dot"></span>
-            <span>Приём по предварительной записи</span>
+        <!-- Photo Container with Top-Right Decorative Corner & Interactive Hover -->
+        <div class="hero__photo-container">
+          <!-- Top-Right Ornamental Corner -->
+          <div class="photo-corner-tr" aria-hidden="true">
+            <svg viewBox="0 0 52 52" fill="none">
+              <path d="M10 6H42C44.2 6 46 7.8 46 10V42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M22 14H38C39.1 14 40 14.9 40 16V32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+              <circle cx="46" cy="6" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+
+          <div class="hero__photo-wrap">
+            <img src="assets/massage-studio-hero.png" alt="Кабинет массажа Baryashan" class="hero__photo">
+            <div class="hero__photo-shimmer"></div>
+            <div class="hero__photo-badge">
+              <span class="badge-dot"></span>
+              <span>Приём по предварительной записи</span>
+            </div>
           </div>
         </div>
       </div>
@@ -364,6 +387,6 @@
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js?v=4.0"></script>
+  <script src="app.js?v=4.5"></script>
 </body>
 </html>
