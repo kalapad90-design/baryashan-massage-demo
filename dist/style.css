@@ -1,6 +1,6 @@
 /* ==========================================================================
    BARYASHAN — Студия массажа в Улан-Удэ
-   Clean Editorial Design by RAF STUDIO
+   Clean Editorial Design with Calligraphic Accents by RAF STUDIO
    ========================================================================== */
 
 :root {
@@ -59,6 +59,61 @@ a {
   .wrap {
     width: calc(100% - 32px);
   }
+}
+
+/* ==========================================================================
+   Calligraphic Accents & Flourishes
+   ========================================================================== */
+
+.callig-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.callig-swoosh {
+  position: absolute;
+  left: -4%;
+  bottom: -6px;
+  width: 108%;
+  height: 14px;
+  color: var(--color-wine);
+  pointer-events: none;
+}
+
+.callig-accent--gold .callig-swoosh {
+  color: var(--color-gold);
+}
+
+.callig-swoosh--about {
+  bottom: -4px;
+}
+
+.callig-stroke {
+  display: block;
+  width: 90px;
+  height: 8px;
+  color: var(--color-wine);
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.callig-stroke--gold {
+  color: var(--color-gold);
+}
+
+.callig-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  background: var(--color-paper);
+  color: var(--color-line);
+}
+
+.callig-divider svg {
+  width: min(240px, 60%);
+  height: 16px;
+  color: #D1C8B9;
 }
 
 /* ==========================================================================
@@ -199,7 +254,7 @@ a {
 
 .hero {
   background: var(--color-paper);
-  padding: 72px 0 84px;
+  padding: 84px 0 88px;
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -210,22 +265,13 @@ a {
   align-items: center;
 }
 
-.hero__tag {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--color-wine);
-  letter-spacing: 0.12em;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
 .hero__title {
   font-family: var(--font-serif);
-  font-size: clamp(48px, 6vw, 84px);
-  line-height: 0.95;
+  font-size: clamp(48px, 6.2vw, 88px);
+  line-height: 0.98;
   font-weight: 400;
   letter-spacing: -0.05em;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .hero__title em {
@@ -331,19 +377,10 @@ a {
   gap: 64px;
 }
 
-.kicker {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--color-wine);
-  letter-spacing: 0.1em;
-  display: block;
-  margin-bottom: 14px;
-}
-
 .section-heading {
   font-family: var(--font-serif);
   font-size: clamp(34px, 4.2vw, 54px);
-  line-height: 1.05;
+  line-height: 1.08;
   font-weight: 400;
   letter-spacing: -0.04em;
 }
@@ -509,10 +546,6 @@ a {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 56px;
   align-items: center;
-}
-
-.kicker--gold {
-  color: var(--color-gold);
 }
 
 .section-heading--light {

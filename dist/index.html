@@ -18,7 +18,7 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="style.css?v=3.2">
 </head>
 <body>
 
@@ -52,10 +52,14 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__text">
-          <div class="hero__tag">СТУДИЯ МАССАЖА · КДЦ «АРУН»</div>
           <h1 class="hero__title">
             Тело слышит <br>
-            <em>тишину</em>
+            <span class="callig-accent">
+              <em>тишину</em>
+              <svg class="callig-swoosh" viewBox="0 0 190 14" fill="none" aria-hidden="true">
+                <path d="M3 10C45 2 135 1 187 6C138 11 65 13 3 10Z" fill="currentColor"/>
+              </svg>
+            </span>
           </h1>
           <p class="hero__desc">
             Пространство для снятия зажимов, физического восстановления и глубокого отдыха в самом центре города.
@@ -97,12 +101,30 @@
       </div>
     </section>
 
+    <!-- Calligraphic Section Divider -->
+    <div class="callig-divider" aria-hidden="true">
+      <svg viewBox="0 0 320 18" fill="none">
+        <path d="M4 9C80 3 160 15 240 8C270 5 295 11 316 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="160" cy="9" r="2.5" fill="currentColor"/>
+      </svg>
+    </div>
+
     <!-- ================= ABOUT ================= -->
     <section class="about" id="about">
       <div class="wrap about__grid">
         <div class="about__lead">
-          <span class="kicker">01 / О ПРОСТРАНСТВЕ</span>
-          <h2 class="section-heading">Спокойный формат заботы о себе</h2>
+          <h2 class="section-heading">
+            Спокойный формат <br>
+            <span class="callig-accent">
+              <em>заботы о себе</em>
+              <svg class="callig-swoosh callig-swoosh--about" viewBox="0 0 240 14" fill="none" aria-hidden="true">
+                <path d="M3 10C55 2 170 1 237 6C175 11 85 13 3 10Z" fill="currentColor"/>
+              </svg>
+            </span>
+          </h2>
+          <svg class="callig-stroke" viewBox="0 0 110 8" fill="none" aria-hidden="true">
+            <path d="M2 5C30 1 75 7 108 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
         <div class="about__content">
           <p class="text-large">
@@ -126,13 +148,25 @@
       </div>
     </section>
 
+    <!-- Calligraphic Section Divider -->
+    <div class="callig-divider" aria-hidden="true">
+      <svg viewBox="0 0 320 18" fill="none">
+        <path d="M4 9C80 3 160 15 240 8C270 5 295 11 316 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="160" cy="9" r="2.5" fill="currentColor"/>
+      </svg>
+    </div>
+
     <!-- ================= SERVICES & PRICING ================= -->
     <section class="services" id="services">
       <div class="wrap">
         <div class="services__header">
           <div>
-            <span class="kicker">02 / НАПРАВЛЕНИЯ</span>
-            <h2 class="section-heading">Программы и стоимость</h2>
+            <h2 class="section-heading">
+              Программы и <span class="callig-accent"><em>стоимость</em><svg class="callig-swoosh" viewBox="0 0 190 14" fill="none" aria-hidden="true"><path d="M3 10C45 2 135 1 187 6C138 11 65 13 3 10Z" fill="currentColor"/></svg></span>
+            </h2>
+            <svg class="callig-stroke" viewBox="0 0 130 8" fill="none" aria-hidden="true">
+              <path d="M2 5C35 1 90 7 128 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </div>
           <p class="services__subtitle">
             Выберите направление — запишитесь в Telegram на удобное время.
@@ -263,10 +297,18 @@
     <section class="location" id="contacts">
       <div class="wrap location__grid">
         <div class="location__info">
-          <span class="kicker kicker--gold">03 / ЛОКАЦИЯ</span>
           <h2 class="section-heading section-heading--light">
-            Встречаем в <br><em>КДЦ «Арун»</em>
+            Встречаем в <br>
+            <span class="callig-accent callig-accent--gold">
+              <em>КДЦ «Арун»</em>
+              <svg class="callig-swoosh" viewBox="0 0 200 14" fill="none" aria-hidden="true">
+                <path d="M3 10C48 2 145 1 197 6C145 11 70 13 3 10Z" fill="currentColor"/>
+              </svg>
+            </span>
           </h2>
+          <svg class="callig-stroke callig-stroke--gold" viewBox="0 0 110 8" fill="none" aria-hidden="true">
+            <path d="M2 5C30 1 75 7 108 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
           <p class="location__desc">
             Центр города, удобный подъезд и парковочные места. Приём проходит в тихом кабинете по предварительной записи.
           </p>
@@ -324,6 +366,6 @@
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=3.2"></script>
 </body>
 </html>
