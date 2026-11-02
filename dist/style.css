@@ -1,6 +1,7 @@
 /* ==========================================================================
    BARYASHAN — Студия массажа в Улан-Удэ
-   Clean Editorial Design with Calligraphic Accents by RAF STUDIO
+   Clean Editorial Design with Vertical Stripes & Calligraphy
+   Developed by RAF STUDIO
    ========================================================================== */
 
 :root {
@@ -9,6 +10,7 @@
   --color-paper-alt: #F1EDE4;
   --color-sand: #EAE3D5;
   --color-line: #DFD8CC;
+  --color-line-light: rgba(223, 216, 204, 0.45);
   --color-muted: #6E6962;
   --color-subtle: #8F8980;
   
@@ -43,6 +45,7 @@ body {
   font-size: 15px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 a {
@@ -53,6 +56,7 @@ a {
 .wrap {
   width: min(1200px, calc(100% - 56px));
   margin: 0 auto;
+  position: relative;
 }
 
 @media (max-width: 640px) {
@@ -62,8 +66,59 @@ a {
 }
 
 /* ==========================================================================
-   Calligraphic Accents & Flourishes
+   Vertical Guide Stripes (Full-Page Architectural Grid)
    ========================================================================== */
+
+.v-guide-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.v-guide-lines__inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid var(--color-line-light);
+  border-right: 1px solid var(--color-line-light);
+}
+
+.v-line {
+  height: 100%;
+  border-right: 1px solid var(--color-line-light);
+}
+
+@media (max-width: 768px) {
+  .v-guide-lines__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .v-line:nth-child(3), .v-line:nth-child(4) {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Vertical Calligraphic Lines & Accents
+   ========================================================================== */
+
+.title-with-vline {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+}
+
+.v-callig-line {
+  width: 10px;
+  height: auto;
+  min-height: 90px;
+  color: var(--color-wine);
+  flex-shrink: 0;
+}
+
+.v-callig-line--gold {
+  color: var(--color-gold);
+}
 
 .callig-accent {
   position: relative;
@@ -88,32 +143,12 @@ a {
   bottom: -4px;
 }
 
-.callig-stroke {
-  display: block;
-  width: 90px;
-  height: 8px;
-  color: var(--color-wine);
-  margin-top: 8px;
-  margin-bottom: 4px;
-}
-
-.callig-stroke--gold {
-  color: var(--color-gold);
-}
-
-.callig-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 0;
-  background: var(--color-paper);
-  color: var(--color-line);
-}
-
-.callig-divider svg {
-  width: min(240px, 60%);
-  height: 16px;
-  color: #D1C8B9;
+.v-feature-bar {
+  width: 3px;
+  min-height: 48px;
+  border-radius: 2px;
+  background: var(--color-wine);
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -271,7 +306,7 @@ a {
   line-height: 0.98;
   font-weight: 400;
   letter-spacing: -0.05em;
-  margin-bottom: 26px;
+  margin-bottom: 0;
 }
 
 .hero__title em {
@@ -284,7 +319,7 @@ a {
   color: #4A4641;
   max-width: 480px;
   line-height: 1.6;
-  margin-bottom: 36px;
+  margin: 28px 0 36px;
 }
 
 .hero__actions {
@@ -297,9 +332,16 @@ a {
 
 .hero__meta {
   display: flex;
-  gap: 36px;
+  align-items: center;
+  gap: 28px;
   padding-top: 32px;
   border-top: 1px solid var(--color-line);
+}
+
+.meta-divider {
+  width: 1px;
+  height: 38px;
+  background: var(--color-line);
 }
 
 .meta-item {
@@ -400,6 +442,12 @@ a {
   padding-top: 28px;
 }
 
+.about__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
 .about__feature strong {
   display: block;
   font-size: 14.5px;
@@ -415,7 +463,7 @@ a {
 }
 
 /* ==========================================================================
-   Services Section (Clean Editorial List)
+   Services Section (Clean Editorial List with Vertical Stripes)
    ========================================================================== */
 
 .services {
@@ -448,15 +496,31 @@ a {
   display: grid;
   grid-template-columns: 48px 1.6fr 130px 130px 130px;
   gap: 24px;
-  padding: 28px 0;
+  padding: 28px 16px;
   border-bottom: 1px solid var(--color-line);
   align-items: baseline;
-  transition: padding var(--transition), background-color var(--transition);
+  position: relative;
+  transition: all var(--transition);
+}
+
+.service-row__v-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-wine);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .service-row:hover {
-  padding-left: 10px;
-  background-color: rgba(241, 237, 228, 0.4);
+  background-color: rgba(241, 237, 228, 0.5);
+  padding-left: 24px;
+}
+
+.service-row:hover .service-row__v-accent {
+  opacity: 1;
 }
 
 .service-row__num {
@@ -728,7 +792,12 @@ a {
 
   .hero__meta {
     flex-direction: column;
+    align-items: flex-start;
     gap: 14px;
+  }
+
+  .meta-divider {
+    display: none;
   }
 
   .services__header {
@@ -739,7 +808,7 @@ a {
   .service-row {
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 22px 0;
+    padding: 22px 12px;
   }
 
   .service-row__num {
