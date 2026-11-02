@@ -1,6 +1,6 @@
 /* ==========================================================================
    BARYASHAN — Студия массажа в Улан-Удэ
-   Clean Minimal Design (Zero Horizontal Lines + Signature Vertical Accents)
+   Clean Minimal Design (Authentic Calligraphic Dividers & Corner)
    Developed by RAF STUDIO
    ========================================================================== */
 
@@ -64,9 +64,51 @@ a {
 }
 
 /* ==========================================================================
-   Signature Vertical Lines & Accents
+   Authentic Calligraphic Dividers & Lines
    ========================================================================== */
 
+/* Full-width calligraphic horizontal divider */
+.callig-h-divider {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 12px;
+  display: block;
+  color: #D1C7B8;
+  pointer-events: none;
+}
+
+.callig-h-divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.callig-h-divider--dark {
+  color: #36322E;
+}
+
+.callig-h-divider--footer {
+  color: #22201D;
+}
+
+/* Calligraphic stroke between service rows */
+.callig-row-divider {
+  width: 100%;
+  height: 6px;
+  display: block;
+  color: rgba(209, 199, 184, 0.55);
+  pointer-events: none;
+  margin: 2px 0;
+}
+
+.callig-row-divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Vertical Calligraphic line beside headings */
 .title-with-vline {
   display: flex;
   align-items: stretch;
@@ -224,7 +266,7 @@ a {
 }
 
 /* ==========================================================================
-   Hero
+   Hero (Screen 1)
    ========================================================================== */
 
 .hero {
@@ -266,46 +308,10 @@ a {
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-/* Hero Meta Items with Vertical Red Lines (Matching Screenshot) */
-.hero__meta {
-  display: flex;
-  align-items: flex-start;
-  gap: 36px;
-  padding-top: 24px;
-  flex-wrap: wrap;
-}
-
-.meta-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.meta-item .v-feature-bar {
-  min-height: 42px;
-}
-
-.meta-item__val {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--color-ink);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.meta-item__lbl {
-  font-size: 13px;
-  color: var(--color-muted);
-  line-height: 1.4;
-  margin-top: 2px;
 }
 
 /* ==========================================================================
-   Hero Photo Card + Interactive Hover + Decorative Top-Right Corner
+   Hero Photo Card + Authentic Calligraphic Corner
    ========================================================================== */
 
 .hero__photo-container {
@@ -313,13 +319,13 @@ a {
   display: block;
 }
 
-/* Top-Right Ornamental Corner outside the picture */
+/* Authentic Calligraphic Corner Swirl outside photo */
 .photo-corner-tr {
   position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 48px;
-  height: 48px;
+  top: -16px;
+  right: -16px;
+  width: 58px;
+  height: 58px;
   color: var(--color-wine);
   z-index: 5;
   pointer-events: none;
@@ -332,7 +338,7 @@ a {
 }
 
 .hero__photo-container:hover .photo-corner-tr {
-  transform: translate(6px, -6px);
+  transform: translate(6px, -6px) scale(1.05);
   color: var(--color-gold);
 }
 
@@ -486,7 +492,7 @@ a {
 }
 
 /* ==========================================================================
-   Services Section (Clean Editorial List - No Horizontal Lines)
+   Services Section (Clean Editorial List with Calligraphic Row Dividers)
    ========================================================================== */
 
 .services {
@@ -511,7 +517,6 @@ a {
 .services__list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .service-row {
@@ -810,12 +815,6 @@ a {
 
   .hero__title {
     font-size: 44px;
-  }
-
-  .hero__meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
   }
 
   .services__header {
