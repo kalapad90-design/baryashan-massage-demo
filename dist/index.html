@@ -1,15 +1,1023 @@
-<!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Baryashan — студия массажа в Улан-Удэ."><title>Baryashan — студия массажа</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');:root{--ink:#171616;--paper:#f8f5f0;--sand:#efe4cb;--cream:#f9edb9;--wine:#a82f35;--line:#d9d3ca;--muted:#777169}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--ink);font:15px/1.55 Manrope,Arial,sans-serif}a{color:inherit;text-decoration:none}.page{margin:6px;background:var(--paper);min-height:calc(100vh - 12px)}.wrap{width:min(1240px,calc(100% - 64px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font:500 25px/1 'Playfair Display',serif;letter-spacing:-.04em}.nav nav{display:flex;align-items:center;gap:28px;font-size:13px}.nav a:not(.cta){color:var(--muted)}.cta{padding:10px 16px;background:var(--ink);color:var(--paper);transition:background .18s}.cta:hover{background:var(--wine)}
-.hero{min-height:620px;position:relative;padding:80px 0 72px;border-bottom:1px solid var(--line);overflow:hidden}.hero:after{content:"";position:absolute;z-index:0;inset:0;background:rgba(248,245,240,.68)}.label{color:#5c574f;font:12px 'DM Mono',monospace}.hero h1{max-width:760px;margin:38px 0 24px;font:400 clamp(58px,7vw,110px)/.87 'Playfair Display',serif;letter-spacing:-.07em}.hero h1 em{font-style:italic;color:var(--wine)}.hero-copy{max-width:430px;color:#4e4a43;font-size:17px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:600;transition:background .18s,transform .18s}.button:hover{background:var(--wine)}.button:active{transform:scale(.98)}.button.alt{background:rgba(248,245,240,.52);color:var(--ink);border:1px solid var(--ink)}.button.alt:hover{background:#eee8de}.hero-photo{position:absolute;z-index:0;inset:0;width:auto;height:auto;background:url('assets/massage-studio-hero.png') center/cover no-repeat;filter:blur(1.4px);transform:scale(1.015)}.hero .wrap{position:relative;z-index:1}
-section{padding:112px 0}.about{background:#fffdf9}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:96px}.kicker{font:12px 'DM Mono',monospace;color:var(--wine)}h2{margin:18px 0 0;font:400 clamp(42px,5vw,70px)/.98 'Playfair Display',serif;letter-spacing:-.05em}.about-copy{padding-top:40px;font-size:18px;color:#5f5a52}.about-copy p{max-width:440px;margin:0}.about-copy p+p{margin-top:20px}.services{border-top:1px solid var(--ink);padding-top:0}.service{display:grid;grid-template-columns:80px 1fr 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .18s}.service:hover{padding-left:12px}.number{color:var(--wine);font:12px 'DM Mono',monospace}.service h3{margin:0;font:400 31px/1 'Playfair Display',serif;letter-spacing:-.04em}.service p{margin:0;color:var(--muted);font-size:14px}.visit{background:var(--ink);color:var(--paper)}.visit .grid{align-items:center}.visit .kicker{color:#e4bd75}.visit h2{max-width:600px}.map-card{height:320px;border:1px solid #5b554d;overflow:hidden}.osm-map{height:100%;width:100%;filter:grayscale(1) contrast(.9) brightness(.82)}.leaflet-control-attribution{font-size:9px!important}.footer{display:none}
-@media(max-width:720px){.wrap{width:calc(100% - 40px)}.nav{height:66px}.nav nav a:not(.cta){display:none}.hero{min-height:670px;padding:60px 0}.hero-photo{inset:0;width:auto;height:auto}.hero h1{margin:32px 0 24px;font-size:61px}.grid{grid-template-columns:1fr;gap:36px}section{padding:76px 0}.about-copy{padding-top:0}.service{grid-template-columns:40px 1fr;gap:12px}.service p{grid-column:2}.service h3{font-size:28px}.hero-actions .button{width:100%}.footer{padding:24px 0}}
-</style></head>
-<body><div class="page"><header class="wrap nav"><a class="brand" href="#top">Baryashan</a><nav><a href="#services">Направления</a><a href="#visit">Адрес</a><a class="cta" href="https://t.me/Baryashan" target="_blank" rel="noreferrer">Записаться</a></nav></header>
-<main id="top"><section class="hero"><div class="wrap"><div class="label">СТУДИЯ МАССАЖА · УЛАН-УДЭ</div><h1>Тело<br>слышит <em>тишину</em></h1><p class="hero-copy">Пространство для расслабления, восстановления и бережного внимания к себе.</p><div class="hero-actions"><a class="button" href="https://t.me/Baryashan" target="_blank" rel="noreferrer">Записаться в Telegram</a><a class="button alt" href="https://2gis.ru/ulanude/firm/70000001081042336" target="_blank" rel="noreferrer">Открыть 2ГИС</a></div></div><div class="hero-photo" role="img" aria-label="Кабинет массажа Baryashan"></div></section>
-<section class="about"><div class="wrap grid"><div><div class="kicker">01 / О СТУДИИ</div><h2>Спокойный формат заботы о себе</h2></div><div class="about-copy"><p>Baryashan — студия массажа в центре Улан‑Удэ. Выберите подходящий формат и запишитесь на удобное время через Telegram.</p><p>Перед визитом можно уточнить детали у мастера.</p></div></div></section>
-<section id="services"><div class="wrap"><div class="kicker">02 / НАПРАВЛЕНИЯ</div><h2>Выберите свой ритм</h2><div class="services"><article class="service"><span class="number">01</span><h3>Оздоровительный массаж</h3><p>Для расслабления и восстановления после повседневной нагрузки</p></article><article class="service"><span class="number">02</span><h3>Массаж лица и тела</h3><p>Индивидуальный формат с учётом вашего запроса</p></article><article class="service"><span class="number">03</span><h3>Детский массаж</h3><p>Условия и доступное время уточняйте у мастера</p></article></div></div></section>
-<section class="visit" id="visit"><div class="wrap grid"><div><div class="kicker">03 / КАК НАЙТИ</div><h2>Встречаем<br>в КДЦ «Арун»</h2></div><div class="map-card"><div id="osm-map" class="osm-map" aria-label="Карта расположения студии Baryashan"></div></div></div></section></main>
-<footer class="wrap footer"></footer></div><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>const map=L.map('osm-map',{scrollWheelZoom:false}).setView([51.8302,107.5868],16);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);L.circleMarker([51.8302,107.5868],{radius:9,color:'#f8f5f0',weight:2,fillColor:'#a82f35',fillOpacity:1}).addTo(map).bindPopup('Baryashan<br>Советская, 23а').openPopup();</script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baryashan — студия массажа в Улан-Удэ | КДЦ «Арун»</title>
+  <meta name="description" content="Студия массажа Baryashan в Улан-Удэ (КДЦ «Арун»). Оздоровительный, классический, лимфодренажный, скульптурный массаж лица, SPA и детский массаж. Рейтинг 5.0 в 2ГИС.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Baryashan — студия массажа в Улан-Удэ">
+  <meta property="og:description" content="Пространство заботы о теле и душевного спокойствия в центре Улан-Удэ. Натуральные масла, приватность, чайный ритуал.">
+  <meta property="og:image" content="assets/massage-studio-hero.png">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="brand" aria-label="Baryashan на главную">
+        <div class="brand__logo-icon">
+          <!-- Zen / Lotus SVG Icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3c-1.5 3-4.5 6-7 7 2.5 1 5.5 4 7 7 1.5-3 4.5-6 7-7-2.5-1-5.5-4-7-7z"/>
+            <path d="M12 10v7"/>
+          </svg>
+        </div>
+        <div class="brand__text">
+          <span class="brand__name">BARYASHAN<span>.</span></span>
+          <span class="brand__desc">
+            <span class="brand__desc-dot"></span>
+            Улан-Удэ • КДЦ «Арун»
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Основная навигация">
+        <ul class="nav-menu">
+          <li><a href="#services" class="nav-link">Услуги и цены</a></li>
+          <li><a href="#about" class="nav-link">О студии</a></li>
+          <li><a href="#process" class="nav-link">Как проходит сеанс</a></li>
+          <li><a href="#certificates" class="nav-link">Сертификаты</a></li>
+          <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+          <li><a href="#location" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header__actions">
+        <div class="header__status-badge" id="liveStatus">
+          <span class="status-dot"></span>
+          <span class="status-text">Ежедневно: 09:00 — 21:00</span>
+        </div>
+
+        <a href="https://t.me/Baryashan" target="_blank" rel="noopener noreferrer" class="btn-header-tg" title="Написать в Telegram" aria-label="Telegram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+          </svg>
+        </a>
+
+        <button type="button" class="btn-primary" data-open-modal>
+          <span>Записаться</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Открыть мобильное меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__panel">
+      <ul class="mobile-nav__links">
+        <li><a href="#services" class="mobile-nav__link">Услуги и цены <span>&rarr;</span></a></li>
+        <li><a href="#about" class="mobile-nav__link">О студии <span>&rarr;</span></a></li>
+        <li><a href="#process" class="mobile-nav__link">Как проходит сеанс <span>&rarr;</span></a></li>
+        <li><a href="#certificates" class="mobile-nav__link">Подарочные сертификаты <span>&rarr;</span></a></li>
+        <li><a href="#reviews" class="mobile-nav__link">Отзывы гостей <span>&rarr;</span></a></li>
+        <li><a href="#location" class="mobile-nav__link">Контакты и карта <span>&rarr;</span></a></li>
+      </ul>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button type="button" class="btn-primary" style="width: 100%; justify-content: center;" data-open-modal>Записаться на сеанс</button>
+        <a href="https://t.me/Baryashan" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: 100%; justify-content: center;">Написать мастеру в Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="top">
+      <div class="hero__ambient"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="hero__badge-tag">Baryashan</span>
+            <span class="hero__badge-sep">•</span>
+            <span class="hero__badge-info">★ 5.0 на 2ГИС • КДЦ «Арун» • Улан-Удэ</span>
+          </div>
+
+          <h1 class="hero__title">
+            Тело слышит <br>
+            <span class="title-break">тишину и <em>заботу</em></span>
+          </h1>
+
+          <p class="hero__lead">
+            Приватное пространство в центре Улан-Удэ, где уходят спазмы, накопленный стресс и хроническая усталость. Бережные техники, натуральные масла и глубокое расслабление.
+          </p>
+
+          <div class="hero__cta-group">
+            <button type="button" class="btn-primary btn-lg" data-open-modal>
+              <span>Записаться на сеанс</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <a href="https://t.me/Baryashan" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-tg);">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+              </svg>
+              <span>Написать в Telegram</span>
+            </a>
+
+            <a href="https://2gis.ru/ulanude/firm/70000001081042336" target="_blank" rel="noopener noreferrer" class="btn-2gis-outline btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+              </svg>
+              <span>Карточка 2ГИС</span>
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat-item">
+              <span class="stat-value">5.0 <span>★</span></span>
+              <span class="stat-label">Безупречный рейтинг в 2ГИС</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100<span>%</span></span>
+              <span class="stat-label">Индивидуальный подбор интенсивности</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">от 45 <span>мин</span></span>
+              <span class="stat-label">Длительность сеансов от экспресс до глубоких</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Media Image -->
+        <div class="hero__media">
+          <div class="hero__media-card">
+            <img src="assets/massage-studio-hero.png" alt="Кабинет массажа Baryashan в Улан-Удэ" class="hero__media-img" loading="eager">
+            <div class="hero__media-overlay"></div>
+            
+            <div class="hero__floating-badge">
+              <div class="floating-badge__info">
+                <h4>Кабинет в КДЦ «Арун»</h4>
+                <p>Советская, 23а • Уют, тепло и тишина</p>
+              </div>
+              <button type="button" class="floating-badge__action" data-open-modal aria-label="Быстрая запись">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES & CATALOG ================= -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header--center">
+          <span class="section-kicker">01 / Направления & Прайс</span>
+          <h2 class="section-title">Программы для <em>тела и лица</em></h2>
+          <p class="section-subtitle">
+            Каждый сеанс адаптируется под ваши ощущения: от мягкого расслабления и лимфодренажа до глубокой проработки зажимов и фасций.
+          </p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-tabs">
+          <button type="button" class="filter-chip active" data-filter="all">
+            <span>Все направления</span>
+            <span class="filter-chip__count">6</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="health">
+            <span>Оздоровительный</span>
+            <span class="filter-chip__count">2</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="spa">
+            <span>Релакс & SPA</span>
+            <span class="filter-chip__count">2</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="face">
+            <span>Лицо & Декольте</span>
+            <span class="filter-chip__count">1</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="kids">
+            <span>Детский</span>
+            <span class="filter-chip__count">1</span>
+          </button>
+        </div>
+
+        <!-- Services Cards Grid -->
+        <div class="services-grid">
+
+          <!-- Card 1: Health Body -->
+          <article class="service-card" data-category="health">
+            <div>
+              <div class="service-card__top">
+                <div class="service-card__tags">
+                  <span class="tag tag--accent">Хит студии</span>
+                  <span class="tag">Спина & тело</span>
+                </div>
+                <span class="service-card__duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  60 / 90 мин
+                </span>
+              </div>
+              <h3 class="service-card__title">Оздоровительный массаж тела</h3>
+              <p class="service-card__desc">
+                Комплексная проработка спины, плечевого пояса, поясницы и ног. Устраняет зажимы от малоподвижной работы, возвращает свободу движений.
+              </p>
+              <ul class="service-card__features">
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Снятие мышечных блоков и спазмов
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Улучшение кровообращения и лимфотока
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Лёгкость и прилив сил сразу после сеанса
+                </li>
+              </ul>
+            </div>
+            <div class="service-card__bottom">
+              <div class="service-card__price-box">
+                <span class="service-card__price-label">Стоимость</span>
+                <span class="service-card__price">от 2 200 ₽</span>
+              </div>
+              <button type="button" class="service-card__btn" data-open-modal data-service-name="Оздоровительный массаж тела">Записаться</button>
+            </div>
+          </article>
+
+          <!-- Card 2: Back & Neck -->
+          <article class="service-card" data-category="health">
+            <div>
+              <div class="service-card__top">
+                <div class="service-card__tags">
+                  <span class="tag">Шейно-воротниковая</span>
+                  <span class="tag">Экспресс</span>
+                </div>
+                <span class="service-card__duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  45 мин
+                </span>
+              </div>
+              <h3 class="service-card__title">Массаж спины и ШВЗ</h3>
+              <p class="service-card__desc">
+                Идеально при сидячей работе и головных болях напряжения. Точечная проработка трапеций, шеи, лопаток и поясничного отдела.
+              </p>
+              <ul class="service-card__features">
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Быстро снимает скованность в шее
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Улучшает приток кислорода к голове
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Подходит для обеденного перерыва
+                </li>
+              </ul>
+            </div>
+            <div class="service-card__bottom">
+              <div class="service-card__price-box">
+                <span class="service-card__price-label">Стоимость</span>
+                <span class="service-card__price">от 1 600 ₽</span>
+              </div>
+              <button type="button" class="service-card__btn" data-open-modal data-service-name="Массаж спины и ШВЗ">Записаться</button>
+            </div>
+          </article>
+
+          <!-- Card 3: Relax & Aroma -->
+          <article class="service-card" data-category="spa">
+            <div>
+              <div class="service-card__top">
+                <div class="service-card__tags">
+                  <span class="tag tag--accent">Антистресс</span>
+                  <span class="tag">SPA</span>
+                </div>
+                <span class="service-card__duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  60 / 90 мин
+                </span>
+              </div>
+              <h3 class="service-card__title">Арома-релакс «Баряшан»</h3>
+              <p class="service-card__desc">
+                Мягкая седативная техника с тёплыми натуральными маслами. Погружает в глубокое спокойствие, снимает эмоциональное выгорание.
+              </p>
+              <ul class="service-card__features">
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Натуральные питательные масла
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Плавные обволакивающие движения
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Нормализация здорового сна
+                </li>
+              </ul>
+            </div>
+            <div class="service-card__bottom">
+              <div class="service-card__price-box">
+                <span class="service-card__price-label">Стоимость</span>
+                <span class="service-card__price">от 2 400 ₽</span>
+              </div>
+              <button type="button" class="service-card__btn" data-open-modal data-service-name="Арома-релакс Баряшан">Записаться</button>
+            </div>
+          </article>
+
+          <!-- Card 4: Sculptural Face Massage -->
+          <article class="service-card" data-category="face">
+            <div>
+              <div class="service-card__top">
+                <div class="service-card__tags">
+                  <span class="tag tag--accent">Омоложение</span>
+                  <span class="tag">Лицо</span>
+                </div>
+                <span class="service-card__duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                  60 мин
+                </span>
+              </div>
+              <h3 class="service-card__title">Скульптурный массаж лица</h3>
+              <p class="service-card__desc">
+                Глубокотканная проработка мимических мышц лица, шеи и зоны декольте. Безоперационный лифтинг, чёткий овал и свежий цвет кожи.
+              </p>
+              <ul class="service-card__features">
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Устранение отёков и пастозности
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Разглаживание мелких морщин
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Формирование чёткого контура скул
+                </li>
+              </ul>
+            </div>
+            <div class="service-card__bottom">
+              <div class="service-card__price-box">
+                <span class="service-card__price-label">Стоимость</span>
+                <span class="service-card__price">от 2 300 ₽</span>
+              </div>
+              <button type="button" class="service-card__btn" data-open-modal data-service-name="Скульптурный массаж лица">Записаться</button>
+            </div>
+          </article>
+
+          <!-- Card 5: Lymphatic Drainage & SPA -->
+          <article class="service-card" data-category="spa">
+            <div>
+              <div class="service-card__top">
+                <div class="service-card__tags">
+                  <span class="tag">Тонус тела</span>
+                  <span class="tag">Детокс</span>
+                </div>
+                <span class="service-card__duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                  60 / 90 мин
+                </span>
+              </div>
+              <h3 class="service-card__title">Лимфодренажный детокс</h3>
+              <p class="service-card__desc">
+                Специальная мягкая техника ускорения лимфотока. Выводит лишнюю межтканевую жидкость, устраняет тяжесть в ногах и ускоряет метаболизм.
+              </p>
+              <ul class="service-card__features">
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Уменьшение объёмов и отёков
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Повышение упругости кожи
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Ощущение невероятной лёгкости
+                </li>
+              </ul>
+            </div>
+            <div class="service-card__bottom">
+              <div class="service-card__price-box">
+                <span class="service-card__price-label">Стоимость</span>
+                <span class="service-card__price">от 2 400 ₽</span>
+              </div>
+              <button type="button" class="service-card__btn" data-open-modal data-service-name="Лимфодренажный детокс">Записаться</button>
+            </div>
+          </article>
+
+          <!-- Card 6: Kids Massage -->
+          <article class="service-card" data-category="kids">
+            <div>
+              <div class="service-card__top">
+                <div class="service-card__tags">
+                  <span class="tag">Детям</span>
+                  <span class="tag">Осанка</span>
+                </div>
+                <span class="service-card__duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                  40 мин
+                </span>
+              </div>
+              <h3 class="service-card__title">Детский оздоровительный</h3>
+              <p class="service-card__desc">
+                Мягкий адаптированный массаж для детей и подростков. Профилактика сколиоза, разгрузка спины от школьного рюкзака и гаджетов.
+              </p>
+              <ul class="service-card__features">
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Бережная постановка правильной осанки
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Снятие школьного стресса и возбудимости
+                </li>
+                <li class="service-card__feature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Условия и возраст уточняйте в Telegram
+                </li>
+              </ul>
+            </div>
+            <div class="service-card__bottom">
+              <div class="service-card__price-box">
+                <span class="service-card__price-label">Стоимость</span>
+                <span class="service-card__price">от 1 500 ₽</span>
+              </div>
+              <button type="button" class="service-card__btn" data-open-modal data-service-name="Детский оздоровительный массаж">Записаться</button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Course Package Banner -->
+        <div class="package-banner">
+          <div>
+            <h3 class="package-banner__title">
+              Курсовые абонементы — <em>стойкий результат</em>
+            </h3>
+            <p class="package-banner__desc">
+              Для устойчивого избавления от мышечных зажимов и восстановления тонуса рекомендуется курс из 5–10 процедур с персональной скидкой.
+            </p>
+          </div>
+          <div class="package-banner__cards">
+            <div class="package-mini-card">
+              <div class="package-mini-card__discount">-10%</div>
+              <div class="package-mini-card__name">Абонемент 5 сеансов</div>
+              <div class="package-mini-card__hint">Срок действия: 2 месяца</div>
+            </div>
+            <div class="package-mini-card">
+              <div class="package-mini-card__discount">-15%</div>
+              <div class="package-mini-card__name">Абонемент 10 сеансов</div>
+              <div class="package-mini-card__hint">Срок действия: 4 месяца</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= ABOUT & PHILOSOPHY ================= -->
+    <section class="philosophy-section" id="about">
+      <div class="container">
+        <div class="section-header--center">
+          <span class="section-kicker">02 / Философия Baryashan</span>
+          <h2 class="section-title">Забота о теле <em>без боли и спешки</em></h2>
+          <p class="section-subtitle">
+            Мы верим, что глубокое мышечное восстановление возможно только в состоянии полного доверия и физического комфорта.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <!-- Hands zen icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5"/>
+                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Чуткие руки мастера</h3>
+            <p class="benefit-card__text">
+              Работаем мягко, но глубоко. Без синяков, резких рывков и травмирующего давления — только анатомически выверенные движения.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <!-- Oil drop / eco icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Натуральные масла</h3>
+            <p class="benefit-card__text">
+              Используем только чистые гипоаллергенные базовые масла (миндаль, виноградная косточка) с добавлением натуральных эфиров.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <!-- Moon / Silence icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Приватность и тишина</h3>
+            <p class="benefit-card__text">
+              Во время сеанса в кабинете находитесь только вы и мастер. Никаких телефонных звонков, посторонних звуков и очередей.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <!-- Coffee/tea cup icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" y1="1" x2="6" y2="4"/>
+                <line x1="10" y1="1" x2="10" y2="4"/>
+                <line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Чайный ритуал</h3>
+            <p class="benefit-card__text">
+              После завершения сеанса мы предлагаем согревающий травяной чай и время спокойно прийти в себя без спешки.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS / HOW IT WORKS ================= -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="section-header--center">
+          <span class="section-kicker">03 / Комфорт на каждом этапе</span>
+          <h2 class="section-title">Как проходит <em>ваш сеанс</em></h2>
+          <p class="section-subtitle">
+            Мы заботимся о каждой детали, чтобы от входа в кабинет до завершения сеанса вы чувствовали абсолютное спокойствие.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <span class="process-step__num">Шаг 01</span>
+            <h3 class="process-step__title">Встреча и беседа</h3>
+            <p class="process-step__text">
+              Мастер уточняет ваши пожелания, проблемные зоны, противопоказания и желаемый уровень интенсивности.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step__num">Шаг 02</span>
+            <h3 class="process-step__title">Подготовка кабинета</h3>
+            <p class="process-step__text">
+              Удобный массажный стол с регулировкой, одноразовое мягкое бельё, приглушённый свет и спокойная музыка.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step__num">Шаг 03</span>
+            <h3 class="process-step__title">Проработка тела</h3>
+            <p class="process-step__text">
+              Плавный переход от разогрева к глубокому снятию спазмов. Постоянный контроль вашего комфорта и дыхания.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step__num">Шаг 04</span>
+            <h3 class="process-step__title">Отдых и чай</h3>
+            <p class="process-step__text">
+              Мягкий выход из расслабления, стакан чистой воды или сборный травяной чай, рекомендации мастера по осанке.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GIFT CERTIFICATES ================= -->
+    <section class="gift-card-section" id="certificates">
+      <div class="container">
+        <div class="gift-card-box">
+          <div>
+            <span class="section-kicker" style="color: var(--color-gold);">04 / Идеальный подарок</span>
+            <h2 class="gift-card__title">
+              Подарочные сертификаты <em>Baryashan</em>
+            </h2>
+            <p class="gift-card__desc">
+              Подарите близкому человеку отдых от городской суеты, лёгкость в теле и искреннюю заботу. Сертификат действует на любую программу или фиксированный номинал.
+            </p>
+            <ul class="gift-card__perks">
+              <li class="gift-card__perk">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Крафтовый конверт с сургучной печатью или электронный сертификат
+              </li>
+              <li class="gift-card__perk">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Номиналы от 1 500 ₽ либо на конкретную SPA-программу
+              </li>
+              <li class="gift-card__perk">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Срок действия — 6 месяцев со дня оформления
+              </li>
+            </ul>
+            <a href="https://t.me/Baryashan?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82" target="_blank" rel="noopener noreferrer" class="btn-primary btn-lg" style="background: var(--color-gold); color: var(--color-dark);">
+              <span>Оформить сертификат в Telegram</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Mockup Preview -->
+          <div class="gift-card__preview">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="preview-gold-logo">BARYASHAN</span>
+              <span class="preview-chip">GIFT CERTIFICATE</span>
+            </div>
+            <div>
+              <p style="font-size: 13px; color: var(--color-text-light-muted); margin-bottom: 4px;">Сеанс заботы о теле</p>
+              <div class="preview-nominal">3 000 ₽</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: #8F887E; font-family: var(--font-mono);">
+              <span>УЛАН-УДЭ · КДЦ «АРУН»</span>
+              <span>№ BY-2026-04</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS SECTION ================= -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header--center">
+          <span class="section-kicker">05 / Впечатления гостей</span>
+          <h2 class="section-title">Что говорят о <em>Baryashan</em></h2>
+          <p class="section-subtitle">
+            Честные отзывы наших гостей из сервиса 2ГИС. Мы ценим доверие каждого клиента.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div>
+              <div class="review-card__header">
+                <div class="review-card__stars">★★★★★</div>
+                <span class="review-card__badge-2gis">2ГИС</span>
+              </div>
+              <p class="review-card__text">
+                «Потрясающий мастер! Пришла с дикой болью в шее и лопатках после тяжелой рабочей недели. После сеанса оздоровительного массажа спина просто ожила, плечи расправились. Очень чистый, теплый кабинет и вкусный травяной чай!»
+              </p>
+            </div>
+            <div class="review-card__author">
+              <div class="review-card__avatar">А</div>
+              <div>
+                <div class="review-card__name">Анна М.</div>
+                <div class="review-card__date">Клиент 2ГИС</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-card__header">
+                <div class="review-card__stars">★★★★★</div>
+                <span class="review-card__badge-2gis">2ГИС</span>
+              </div>
+              <p class="review-card__text">
+                «Делала скульптурный массаж лица — результат заметен сразу, спал отек, скулы стали четкими, кожа светится. Очень деликатный подход, никаких синяков или неприятных ощущений. Обязательно возьму абонемент на курс!»
+              </p>
+            </div>
+            <div class="review-card__author">
+              <div class="review-card__avatar">Е</div>
+              <div>
+                <div class="review-card__name">Елена Д.</div>
+                <div class="review-card__date">Клиент 2ГИС</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-card__header">
+                <div class="review-card__stars">★★★★★</div>
+                <span class="review-card__badge-2gis">2ГИС</span>
+              </div>
+              <p class="review-card__text">
+                «Регулярно хожу на оздоровительный массаж. В КДЦ «Арун» очень удобно добираться, есть парковка. В самом кабинете тишина и умиротворение. Отличный специалист, чувствует каждую мышцу. Рекомендую от души!»
+              </p>
+            </div>
+            <div class="review-card__author">
+              <div class="review-card__avatar">С</div>
+              <div>
+                <div class="review-card__name">Сергей В.</div>
+                <div class="review-card__date">Клиент 2ГИС</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="https://2gis.ru/ulanude/firm/70000001081042336" target="_blank" rel="noopener noreferrer" class="btn-2gis-outline btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+            </svg>
+            <span>Читать все отзывы на 2ГИС &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header--center">
+          <span class="section-kicker">06 / Ответы на вопросы</span>
+          <h2 class="section-title">Часто <em>спрашивают</em></h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item open">
+            <button type="button" class="faq-question">
+              <span>Нужно ли что-то брать с собой на сеанс?</span>
+              <span class="faq-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Ничего брать не нужно. В студии предоставляются одноразовые простыни, тапочки, шапочки, гипоаллергенные средства гигиены и полотенца. Вы просто приходите в удобной одежде.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Болезненный ли оздоровительный массаж?</span>
+              <span class="faq-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Нет, мы работаем по принципу «приятной терапевтической боли» в триггерных точках, без резких стрессовых воздействий. Мастер постоянно держит обратную связь и подстраивает силу нажатия под ваш болевой порог.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>За сколько дней нужно записываться?</span>
+              <span class="faq-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Мы рекомендуем бронировать время за 1–2 дня до желаемой даты, особенно на вечерние слоты и выходные дни. Однако напишите нам в Telegram — возможно, освободилось окошко день в день!
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Как подготовиться к сеансу массажа?</span>
+              <span class="faq-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Рекомендуем воздержаться от плотного приёма пищи за 1–1.5 часа до сеанса. Перед массажем желательно выпить стакан тёплой воды для улучшения лимфотока.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOCATION & CONTACTS ================= -->
+    <section class="location-section" id="location">
+      <div class="container">
+        <div class="location__grid">
+          <div class="location__details">
+            <div>
+              <span class="section-kicker">07 / Локация & Контакты</span>
+              <h2 class="section-title">Ждём вас в <em>КДЦ «Арун»</em></h2>
+              <p class="section-subtitle" style="color: var(--color-text-light-muted);">
+                Удобное расположение в самом центре города, парковочные места, спокойная обстановка внутри комплекса.
+              </p>
+            </div>
+
+            <div class="location-card">
+              <div class="location-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="location-card__content">
+                <h4>Адрес студии</h4>
+                <p>г. Улан-Удэ, ул. Советская, д. 23а</p>
+                <p style="font-size: 12.5px; color: #8F887E; margin-top: 2px;">Культурно-деловой центр «Арун»</p>
+              </div>
+            </div>
+
+            <div class="location-card">
+              <div class="location-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="location-card__content">
+                <h4>Режим работы</h4>
+                <p>Понедельник — Воскресенье: 09:00 — 21:00</p>
+                <p style="font-size: 12.5px; color: #8F887E; margin-top: 2px;">Приём исключительно по предварительной записи</p>
+              </div>
+            </div>
+
+            <div class="location-card">
+              <div class="location-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="location-card__content">
+                <h4>Связь и запись</h4>
+                <p><a href="https://t.me/Baryashan" target="_blank" rel="noopener noreferrer">@Baryashan в Telegram</a></p>
+                <p style="margin-top: 4px;">
+                  <button type="button" class="btn-copy" data-copy-phone="+7 (963) 956-91-22" style="color: var(--color-gold); font-size: 13.5px; text-decoration: underline; cursor: pointer;">
+                    Скопировать номер телефона
+                  </button>
+                </p>
+              </div>
+            </div>
+
+            <div class="location-actions">
+              <a href="https://2gis.ru/ulanude/firm/70000001081042336" target="_blank" rel="noopener noreferrer" class="btn-2gis-outline btn-lg" style="background: #193813; color: #72E658; border-color: rgba(114, 230, 88, 0.4);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                <span>Маршрут в 2ГИС</span>
+              </a>
+              <button type="button" class="btn-primary btn-lg" data-open-modal style="background: var(--color-gold); color: var(--color-dark);">
+                <span>Записаться на сеанс</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Leaflet Map -->
+          <div class="map-wrapper">
+            <div id="map" aria-label="Карта проезда к студии Baryashan"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">BARYASHAN<span>.</span></span>
+          <span class="footer__tagline">Студия массажа и оздоровления в Улан-Удэ</span>
+        </div>
+
+        <ul class="footer__nav">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#about">О студии</a></li>
+          <li><a href="#certificates">Сертификаты</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#location">Контакты</a></li>
+        </ul>
+
+        <div class="footer__socials">
+          <a href="https://t.me/Baryashan" target="_blank" rel="noopener noreferrer" class="footer__social-btn" title="Telegram" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+            </svg>
+          </a>
+          <a href="https://2gis.ru/ulanude/firm/70000001081042336" target="_blank" rel="noopener noreferrer" class="footer__social-btn" title="2ГИС" aria-label="2ГИС">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>
+          &copy; 2026 Baryashan. Все права защищены. г. Улан-Удэ, ул. Советская, 23а.
+        </div>
+        <div class="footer__credit">
+          <span>Сайт разработан в</span>
+          <a href="https://github.com/kalapad90-design" target="_blank" rel="noopener noreferrer"><strong>RAF STUDIO</strong></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= BOOKING MODAL ================= -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="booking-modal">
+      <button type="button" class="modal-close" id="modalClose" aria-label="Закрыть окно">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <h3 id="modalTitle">Запись на сеанс</h3>
+        <p>Выберите удобную программу и время. Мы перенаправим вас в Telegram с уже заполненным текстом заявки.</p>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-group">
+          <label class="form-label" for="modalService">Программа массажа</label>
+          <select class="form-select" id="modalService" required>
+            <option value="Оздоровительный массаж тела (60/90 мин)">Оздоровительный массаж тела (60/90 мин) — от 2 200 ₽</option>
+            <option value="Массаж спины и ШВЗ (45 мин)">Массаж спины и ШВЗ (45 мин) — от 1 600 ₽</option>
+            <option value="Арома-релакс Баряшан (60/90 мин)">Арома-релакс «Баряшан» (60/90 мин) — от 2 400 ₽</option>
+            <option value="Скульптурный массаж лица (60 мин)">Скульптурный массаж лица (60 мин) — от 2 300 ₽</option>
+            <option value="Лимфодренажный детокс (60/90 мин)">Лимфодренажный детокс (60/90 мин) — от 2 400 ₽</option>
+            <option value="Детский оздоровительный массаж (40 мин)">Детский оздоровительный массаж (40 мин) — от 1 500 ₽</option>
+            <option value="Подарочный сертификат">Подарочный сертификат</option>
+            <option value="Консультация с мастером">Консультация с мастером</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalName">Ваше имя</label>
+          <input type="text" class="form-input" id="modalName" placeholder="Как к вам обращаться?" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modalDate">Желаемый день</label>
+            <input type="date" class="form-input" id="modalDate">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modalTime">Время</label>
+            <input type="text" class="form-input" id="modalTime" placeholder="Напр. 15:00 или вечер">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalComment">Пожелания / симптомы</label>
+          <input type="text" class="form-input" id="modalComment" placeholder="Что беспокоит (шея, поясница и т.д.)">
+        </div>
+
+        <button type="submit" class="btn-tg-submit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+          </svg>
+          <span>Отправить заявку в Telegram</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bar -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-sticky-bar__inner">
+      <a href="https://t.me/Baryashan" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn mobile-bar-btn--tg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <button type="button" class="mobile-bar-btn mobile-bar-btn--call" data-open-modal>
+        <span>Записаться</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notice -->
+  <div class="toast-notice" id="toastNotice">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span class="toast-msg">Номер скопирован в буфер!</span>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- App Script -->
+  <script src="app.js?v=2.0"></script>
+</body>
+</html>
