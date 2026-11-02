@@ -217,6 +217,26 @@ a {
   color: #fff;
 }
 
+.btn-tg-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: #EBF5FB;
+  color: #2AABEE;
+  border: 1px solid rgba(42, 171, 238, 0.25);
+  transition: all var(--transition);
+}
+
+.btn-tg-header:hover {
+  background: #2AABEE;
+  color: #FFFFFF;
+  border-color: #2AABEE;
+  transform: translateY(-1px);
+}
+
 .btn-cta {
   display: inline-flex;
   align-items: center;
